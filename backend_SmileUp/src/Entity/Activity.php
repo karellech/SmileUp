@@ -5,10 +5,12 @@ namespace App\Entity;
 use App\Repository\ActivityRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Metadata\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Table(name: 'ACTIVITY')]
 #[ORM\Entity(repositoryClass: ActivityRepository::class)]
+#[ApiResource]
 class Activity
 {
     #[ORM\Id]
