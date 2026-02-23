@@ -5,10 +5,12 @@ namespace App\Entity;
 use App\Repository\RoleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Metadata\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Table(name: 'ROLE')]
 #[ORM\Entity(repositoryClass: RoleRepository::class)]
+#[ApiResource]
 class Role
 {
     #[ORM\Id]
@@ -16,7 +18,7 @@ class Role
     #[ORM\Column(name: 'role_id', type: 'integer')]
     private ?int $id = null;
 
-    #[ORM\Column(length: 10)]
+    #[ORM\Column(length: 50)]
     private ?string $description = null;
 
     #[ORM\OneToMany(mappedBy: 'role', targetEntity: User::class)]
